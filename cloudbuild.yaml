@@ -1,0 +1,9 @@
+options:
+  logging: CLOUD_LOGGING_ONLY  # Use CLOUD_LOGGING_ONLY or NONE
+
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/ramakk-gcp/faballey-prod-test-repo/faballey-prod-test-repo:latest', '.']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/ramakk-gcp/faballey-prod-test-repo/faballey-prod-test-repo:latest']
